@@ -1,3 +1,15 @@
-@font-face{font-family:'ItaliannoRegular';src:url('/public/fonts/Italianno-Regular-OTF-webfont.eot');src:url('/public/fonts/Italianno-Regular-OTF-webfont.eot?#iefix') format('embedded-opentype'),url('/public/fonts/Italianno-Regular-OTF-webfont.woff') format('woff'),url('/public/fonts/Italianno-Regular-OTF-webfont.ttf') format('truetype'),url('/public/fonts/Italianno-Regular-OTF-webfont.svg#ItaliannoRegular') format('svg');font-weight:normal;font-style:normal;}*{box-sizing:border-box;}
-body{font:12px Helvetica,Arial,sans-serif;padding:20px 100px;background:whiteSmoke;}
-h1{font:60px/68px 'ItaliannoRegular',Helvetica,Arial,sans-serif;letter-spacing:0;}
+@font-face{font-family:'ItaliannoRegular';src:url('/public/fonts/Italianno-Regular-OTF-webfont.eot');src:url('/public/fonts/Italianno-Regular-OTF-webfont.eot?#iefix') format('embedded-opentype'),url('/public/fonts/Italianno-Regular-OTF-webfont.woff') format('woff'),url('/public/fonts/Italianno-Regular-OTF-webfont.ttf') format('truetype'),url('/public/fonts/Italianno-Regular-OTF-webfont.svg#ItaliannoRegular') format('svg');font-weight:normal;font-style:normal;}@font-face{font-family:'TheanoDidotRegular';src:url('/public/fonts/TheanoDidot-Regular-webfont.eot');src:url('/public/fonts/TheanoDidot-Regular-webfont.eot?#iefix') format('embedded-opentype'),url('/public/fonts/TheanoDidot-Regular-webfont.woff') format('woff'),url('/public/fonts/TheanoDidot-Regular-webfont.ttf') format('truetype'),url('/public/fonts/TheanoDidot-Regular-webfont.svg#TheanoDidotRegular') format('svg');font-weight:normal;font-style:normal;}q h1{font-size:234.88102400000002px;line-height:268.4354560000001px;}
+q h2{font-size:146.80064000000002px;line-height:167.77216000000007px;}
+q h3{font-size:91.75040000000001px;line-height:104.85760000000003px;}
+q h4{font-size:57.34400000000001px;line-height:65.53600000000002px;}
+q h5{font-size:35.84px;line-height:40.96000000000001px;}
+q h6{font-size:22.400000000000002px;line-height:25.6px;}
+*{box-sizing:border-box;}
+body{font:12px Baskerville,Helvetica,Arial,sans-serif;background:whiteSmoke;color:#222222;padding:0px;text-align:center;}
+header{margin:10px 0 0 10px;float:left;font-style:italic;font-size:30px;}
+article{width:700px;margin:0px auto;text-align:left;padding:15px;}
+q{font:30px/36px 'TheanoDidotRegular',Helvetica,Arial,sans-serif;letter-spacing:0;display:block;text-align:center;text-transform:uppercase;font-style:italic;padding:40px;}
+q::before{content:'“';}
+q::after{content:'”';}
+author{display:block;float:right;font-size:18px;font-style:italic;}
+author a,author a:hover{color:#222222;text-decoration:underline;}

@@ -6,13 +6,56 @@
   box-sizing: border-box; 
 }
 
+@darkgrey: whiteSmoke;
+@textcolor: #222;
+
 body {
-  font: 12px Helvetica, Arial, sans-serif;
-  padding: 20px 100px;
-  background: whiteSmoke;
+  font: 12px Baskerville, Helvetica, Arial, sans-serif;
+  background: @darkgrey;
+  color: @textcolor;
+  padding: 0px;
+  text-align: center;
 }
 
-h1 {
-  font: 60px/68px 'ItaliannoRegular', Helvetica, Arial, sans-serif;
+header {
+  margin: 10px 0 0 10px;
+  float: left;
+  font-style: italic;
+  font-size: 30px;
+}
+
+article {
+  width: 700px;
+  margin: 0px auto;
+  text-align: left;
+  padding: 15px;
+}
+
+q {
+  font: 30px/36px 'TheanoDidotRegular', Helvetica, Arial, sans-serif;
   letter-spacing: 0;
+  display: block;
+  text-align: center;
+  text-transform: uppercase;
+  font-style: italic;
+  padding: 40px;
+}
+
+q::before {
+  content: '“';
+}
+q::after {
+  content: '”';
+}
+
+author {
+  display: block;
+  float:right;
+  font-size: 18px;
+  font-style: italic;
+}
+
+author a, author a:hover {
+  color: @textcolor;
+  text-decoration: underline;
 }
