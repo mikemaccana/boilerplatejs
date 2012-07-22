@@ -1,0 +1,3 @@
+@font-face{font-family:'ItaliannoRegular';src:url('/public/fonts/Italianno-Regular-OTF-webfont.eot');src:url('/public/fonts/Italianno-Regular-OTF-webfont.eot?#iefix') format('embedded-opentype'),url('/public/fonts/Italianno-Regular-OTF-webfont.woff') format('woff'),url('/public/fonts/Italianno-Regular-OTF-webfont.ttf') format('truetype'),url('/public/fonts/Italianno-Regular-OTF-webfont.svg#ItaliannoRegular') format('svg');font-weight:normal;font-style:normal;}*{box-sizing:border-box;}
+body{font:12px Helvetica,Arial,sans-serif;padding:20px 100px;background:whiteSmoke;}
+h1{font:60px/68px 'ItaliannoRegular',Helvetica,Arial,sans-serif;letter-spacing:0;}

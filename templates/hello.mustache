@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="public/css/boilerplate.css">
+    <script data-main="public/js/boilerplate" src="public/js/lib/require.js"></script>
+    <title>{{ title }}</title>
+    <link rel="shortcut icon" href="public/images/favicon.ico" type="image/x-icon"></link>
+  </head>
+
+  <body>
+		<h1>{{ title }}</h1>
+		<p>{{ content }}</p>
+		<h2>Features include:</h2>
+    <ul>
+      {{#features}}
+        <li>{{{ . }}}</li>
+      {{/features}}    
+    </ul>
+  </body>
+</html>
+

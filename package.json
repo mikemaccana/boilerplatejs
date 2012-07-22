@@ -1,0 +1,34 @@
+{
+  "name": "boilerplatejs",
+  "version": "2012.04.27",
+  "main": "app",
+  "description": "A demo app for .",
+  "keywords": [
+     "node",
+     "js",
+     "javascript",
+     "boilerplate"
+  ],
+  "author": {
+     "name": "Mike MacCaa",
+     "email": "mike.maccana@gmail.com",
+     "web": "http://www.mikemaccana.com",
+     "twitter": "mikemaccana"
+  }, 
+  "license": "Proprietary",
+  "repository": {
+     "type": "git",
+     "url": "https://github.com/mikemaccana/boilerplatejs.git" 
+  }, 
+  "engines": {
+     "node": ">=0.8.1"
+  },
+  "dependencies": {
+    "requirejs": ">=2.0.2",
+    "hogan": ">=0.4.0",
+    "express": ">=2.5.11"
+  },
+  "scripts": {
+    "preinstall": "npm i -g less"
+  }
+}
