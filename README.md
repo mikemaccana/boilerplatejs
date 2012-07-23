@@ -20,4 +20,5 @@ Assuming you've already got node installed, run:
 
 boilerplate.js uses less for CSS variables etc. You can regenerate the .CSS files with:
     
+    npm install -g less
     lessc -x public/less/boilerplate.less > public/css/boilerplate.css 
