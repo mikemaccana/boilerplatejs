@@ -5,7 +5,10 @@
 var requirejs = require('requirejs');
 requirejs.config({ nodeRequire: require, baseUrl: "lib" });
 
-requirejs(['express', 'utils', './public/js/lib/shared.js',], function (express, utils, shared) {
+requirejs(['express', 'utils', 'fs', './public/js/lib/agave.js'], function (express, utils, fs, agave) {
+  
+  var REVIEWS_FILE = 'reviews.json'
+  
   var app = express.createServer();
   app.configure(function(){
     app.use(express.methodOverride()); // Allow browsers to simulate PUT etc.
@@ -19,38 +22,33 @@ requirejs(['express', 'utils', './public/js/lib/shared.js',], function (express,
     app.use(app.router);
   });
   
-  app.get('/', function(request, response){
-    var template_data = [
-      {
-        title:'Boy Meets Girl Meets Toaster',
-        vendor:'Asda',
-        date:'2012-07-09 04:28:54',
-        item:'Nokia 100 Mobile Phone - Vodafone',
-        author:'Jane',
-        location:'Lancashire',
-        link:'http://direct.asda.com/Nokia-100-Mobile-Phone---Vodafone/008718298,default,pd.html',
-        content:'This is the phone for you if you really do just want a <h4>decent basic mobile phone</h4> rather than a <h6>portable office/</h6><h5>music studio/</h5><h5>cinema/</h5><h4>British library/</h4><h5>missile tracking system/</h5><h4>hadron collider/</h4><h6>bat detector/</h6><h5>trading floor/</h5><h5>muffin tin/<h5></h6>paperweight</h6>.',
-        tags:['love','bizarre'],
-        font:'TheanoDidotRegular',
-        product_first:false
-      },
-      {
-        title:'Boy Meets Girl Meets Toaster',
-        vendor:'Homebase',
-        date:'2012-07-04 09:08:16',
-        item:'Green Twine - 60m',
-        author:'Unnamed',
-        location:'Woking',
-        link:'http://www.homebase.co.uk/webapp/wcs/stores/servlet/ProductDisplay?langId=110&storeId=10151&partNumber=829850',
-        content:'If you want string, <h4>this is string,</h4> if you want a frying pan <h4>this is not a frying pan...</h4><h6>only use this as string to tie things together, or things to other things.</h6><h6>Will not work if using to cook bacon...</h6> <h5>If you\'re still not sure of what this does or whether it is fit for purpose then you need to seek help,<h5><h6> not for further clarification but for yourself...</h6>',
-        tags:['ronseal','bizarre'],
-        font:'BloklettersPotlood',
-        product_first:false
-      }
-    ]
-    console.log('Server running on port 3000')
-    utils.respondWithTemplate(response, 'hello', template_data[0])
-  });
+  // Load our reviews
+  fs.readFile(REVIEWS_FILE, 'utf-8', function(err, review_data){
+    var reviews = JSON.parse(review_data);
 
-  app.listen(3000);
+    // Overall view
+    app.get('/', function(request, response){
+      console.log('Server running on port 3000')
+      utils.respondWithTemplate(response, 'site', reviews[0])
+    });    
+  
+    // Individual page view
+    app.get("/:review_slug", function(req, res) {    
+     var review_slug = req.params.review_slug;
+     var review = reviews.findItem(function(item){
+       return item.slug = review_slug;
+     })     
+     utils.respondWithTemplate(response, 'site', review)
+    })
+     
+    // Admin view
+    app.get('/admin', function(request, response){
+      response.end('admin goes here');
+    })
+
+
+    app.listen(3000);    
+  })
+  
+
 })
