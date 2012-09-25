@@ -8,6 +8,7 @@ requirejs.config({ nodeRequire: require, baseUrl: "lib" });
 requirejs(['express', 'utils', 'fs', 'hulk-hogan', './public/js/lib/agave.js'], function (express, utils, fs, hulk,agave) {
   
   var REVIEWS_FILE = 'reviews.json';
+  var DEFAULT_TITLE = 'Boy Meets Girl Meets Toaster'
   
   var PORT = 3000;
   
@@ -28,21 +29,25 @@ requirejs(['express', 'utils', 'fs', 'hulk-hogan', './public/js/lib/agave.js'], 
   // Load our reviews
   fs.readFile(REVIEWS_FILE, 'utf-8', function(err, review_data){
     var reviews = JSON.parse(review_data);
+    
+    reviews.forEach(function(review){
+      review.reviewtext = '<p>'+review.reviewtext.replace('. ','.</p><p>').replace('!','.</p><p>').replace('?','.</p><p>')+'</p>'
+    })
 
     // Overall view
     app.get('/', function(request, response){
       console.log('Visit to /')
-      utils.respondWithTemplate(response, 'site', {reviews:reviews}, {reviewtemplate:'review'})
+      utils.respondWithTemplate(response, 'front_page', {reviews:reviews, title: DEFAULT_TITLE}, {reviewtemplate:'review'})
     });    
   
     // Individual page view
-    app.get("/reviews/:review_slug", function(req, res) {    
+    app.get("/reviews/:review_slug", function(request, response) {    
      console.log('Visit to /reviews/')
-     var review_slug = req.params.review_slug;
+     var review_slug = request.params.review_slug;
      var review = reviews.findItem(function(item){
        return item.slug = review_slug;
      })     
-     utils.respondWithTemplate(response, 'site', {reviews:[review]}, {reviewtemplate:review})
+     utils.respondWithTemplate(response, 'review_page', {review:review, title: DEFAULT_TITLE}, {reviewtemplate:'review'})
     })
      
     // Admin view

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="/public/css/reset.css">
+    <link rel="stylesheet" href="/public/css/bmgmt.css">
+    <script data-main="/public/js/boilerplate" src="/public/js/lib/require.js"></script>
+    <title>{{{ title }}}</title>
+    <link rel="shortcut icon" href="/public/images/favicon.ico" type="image/x-icon"></link>
+  </head>
+
+  <body>
+    <div id="fb-root"></div>
+    <!-- https://developers.facebook.com/docs/reference/plugins/comments/ -->
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1&appId=38965939913";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+    
+		<header>{{{ title }}}</header>
+    <div id="reviews">
+      {{#reviews}}
+        {{> reviewtemplate }}
+      {{/reviews}}
+      
+      <div class="fb-comments" data-href="http://example.com" data-num-posts="2" data-width="600"></div>
+    </div>
+    
+    <footer>
+      <img id="bv" src="/public/images/bv-small.png"/>
+      <img id="pt" src="/public/images/pt-small-cropped.png"/>
+      <p id="legal">The Prince’s Trust is a registered charity number 1079675, incorporated by Royal Charter.</p>
+    </footer>
+  </body>
+</html>    

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="/public/css/reset.css">
+    <link rel="stylesheet" href="/public/css/bmgmt.css">
+    <script data-main="/public/js/boilerplate" src="/public/js/lib/require.js"></script>
+    <title>{{{ title }}}</title>
+    <link rel="shortcut icon" href="/public/images/favicon.ico" type="image/x-icon"></link>
+    <meta property="fb:app_id" content="{YOUR_APPLICATION_ID}"/>
+  </head>
+
+  <body>
+		<header>{{{ title }}}</header>
+    <div id="reviews">
+      {{#reviews}}
+        {{> reviewtemplate }}
+        <iframe src="http://www.facebook.com/plugins/comments.php?href=example.com&permalink=1" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:130px; height:16px;" allowTransparency="true"></iframe>
+      {{/reviews}}
+    </div>  
+    
+    <footer>
+      <img id="bv" src="/public/images/bv-small.png"/>
+      <img id="pt" src="/public/images/pt-small-cropped.png"/>
+      <p id="legal">The Prince’s Trust is a registered charity number 1079675, incorporated by Royal Charter.</p>
+    </footer>
+  </body>
+</html>    
+    
