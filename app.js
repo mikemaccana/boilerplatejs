@@ -1,6 +1,4 @@
 #!/usr/bin/env node
-/*jshint asi:true */ 
-
 // Modules
 var requirejs = require('requirejs');
 requirejs.config({ nodeRequire: require, baseUrl: "lib" });
