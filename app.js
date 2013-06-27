@@ -4,7 +4,8 @@ var requirejs = require('requirejs');
 requirejs.config({ nodeRequire: require, baseUrl: "lib" });
 
 requirejs(['express', 'utils', './public/js/lib/shared.js',], function (express, utils, shared) {
-  var app = express.createServer();
+  var PORT = 3000;
+  var app = express();
   app.configure(function(){
     app.use(express.methodOverride()); // Allow browsers to simulate PUT etc.
     app.use(express.bodyParser()); // Support POST form bodies. Why would someone ever *not* want this?
@@ -26,5 +27,6 @@ requirejs(['express', 'utils', './public/js/lib/shared.js',], function (express,
     utils.respondWithTemplate(response, 'hello', template_data)
   });
 
-  app.listen(3000);
+  app.listen(PORT);
+  console.log('App is now running on', PORT);
 })

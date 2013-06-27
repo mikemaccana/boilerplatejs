@@ -1,31 +1,29 @@
 {
   "name": "boilerplatejs",
-  "version": "2012.04.27",
+  "version": "2013.06.27",
   "main": "app",
-  "description": "A demo app for .",
+  "description": "A full-stack Demo app.",
   "keywords": [
-     "node",
-     "js",
-     "javascript",
-     "boilerplate"
+     "boilerplate",
+     "full stack"
   ],
   "author": {
      "name": "Mike MacCaa",
      "email": "mike.maccana@gmail.com",
      "web": "http://www.mikemaccana.com",
      "twitter": "mikemaccana"
-  }, 
-  "license": "Proprietary",
+  },
+  "license": "MIT",
   "repository": {
      "type": "git",
-     "url": "https://github.com/mikemaccana/boilerplatejs.git" 
-  }, 
+     "url": "https://github.com/mikemaccana/boilerplatejs.git"
+  },
   "engines": {
-     "node": ">=0.8.1"
+     "node": "==0.10.10"
   },
   "dependencies": {
     "requirejs": ">=2.0.2",
-    "hogan": ">=0.4.0",
-    "express": ">=2.5.11"
+    "hogan.js": "==2.0.0",
+    "express": "==3.2.6"
   }
 }
