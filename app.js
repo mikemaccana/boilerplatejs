@@ -8,15 +8,15 @@ requirejs(['express', 'utils', './public/js/lib/shared.js',], function (express,
   app.configure(function(){
     app.use(express.methodOverride()); // Allow browsers to simulate PUT etc.
     app.use(express.bodyParser()); // Support POST form bodies. Why would someone ever *not* want this?
-    // 'express.static' causes jshint warning (static is reserved word). 
+    // 'express.static' causes jshint warning (static is reserved word).
     app.use('/public', express['static']('public'));
     app.use(express.errorHandler({
-      dumpExceptions: true, 
+      dumpExceptions: true,
       showStack: true
     }));
     app.use(app.router);
   });
-  
+
   app.get('/', function(request, response){
     // response.send('Hello World');
     var template_data = {
