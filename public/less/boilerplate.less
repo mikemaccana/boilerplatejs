@@ -1,61 +1,96 @@
 @import "fonts.less";
-@import "fontsizes.less";
+@import "normalize.less";
+
+@prettyblue: #4DBF9F;
+@sidebar-width: 150px;
+@darkgrey: #222;
 
 /* Ensure padding is inside boxes. See http://paulirish.com/2012/box-sizing-border-box-ftw */
-* { 
-  box-sizing: border-box; 
+* {
+  box-sizing: border-box;
 }
 
-@darkgrey: whiteSmoke;
-@textcolor: #222;
+a, a:hover, a:active, a:visited {
+  color: @prettyblue;
+  text-decoration: none;
+}
+
+.transform(@string){
+  -webkit-transform: @string;
+  -moz-transform: @string;
+  -ms-transform: @string;
+  -o-transform: @string;
+}
+
+/* ☰ button */
+.nav-link {
+  display: none;
+  top: 0;
+  left: @sidebar-width;
+  background: rgba(0,0,0,0.7);
+  padding: 1em;
+  @media (max-width: 770px) {
+    position: fixed;
+    left: 0;
+    display: block;
+  }
+}
+
+nav {
+  margin-left: -@sidebar-width;
+  width: @sidebar-width;
+  position: fixed;
+  top: 0;
+  left: @sidebar-width;
+  bottom: 0;
+  z-index: 1;
+  background: @darkgrey;
+  overflow-y: auto;
+  color: whitesmoke;
+  &.menu-active {
+    .transform(translateX(0));
+    width: @sidebar-width;
+  }
+  @media (max-width: 770px) {
+    left: 0;
+  }
+  ul, li {
+    list-style: none;
+  }
+  ul {
+    padding-left: 10px;
+  }
+}
+
+body, nav, .nav-link {
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -ms-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
 
 body {
-  font: 12px Baskerville, Helvetica, Arial, sans-serif;
-  background: @darkgrey;
-  color: @textcolor;
-  padding: 0px;
-  text-align: center;
+  padding-left: @sidebar-width;
+  left: 0;
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 100;
+  color: @darkgrey;
+  &.menu-active {
+    position: relative;
+    .transform(translateX(@sidebar-width));
+    .nav-link {
+      .transform(translateX(0));
+    }
+  }
+  @media (max-width: 770px) {
+    padding-left: 0;
+  }
 }
 
-header {
-  margin: 10px 0 0 10px;
-  float: left;
-  font-style: italic;
-  font-size: 30px;
+.content {
+  padding: 20px;
+  max-width: 700px;
 }
 
-article {
-  width: 700px;
-  margin: 0px auto;
-  text-align: left;
-  padding: 15px;
-}
-
-q {
-  font: 30px/36px 'TheanoDidotRegular', Helvetica, Arial, sans-serif;
-  letter-spacing: 0;
-  display: block;
-  text-align: center;
-  text-transform: uppercase;
-  font-style: italic;
-  padding: 40px;
-}
-
-q::before {
-  content: '“';
-}
-q::after {
-  content: '”';
-}
-
-author {
-  display: block;
-  float:right;
-  font-size: 18px;
-  font-style: italic;
-}
-
-author a, author a:hover {
-  color: @textcolor;
-  text-decoration: underline;
-}

@@ -1,21 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <link rel="stylesheet" href="public/css/reset.css">
     <link rel="stylesheet" href="public/css/boilerplate.css">
-    <script data-main="public/js/boilerplate" src="public/js/lib/require.js"></script>
+
     <title>{{ title }}</title>
     <link rel="shortcut icon" href="public/images/favicon.ico" type="image/x-icon"></link>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="IE=10,chrome=1" />
+    <meta charset="utf-8">
   </head>
 
   <body>
-		<header>{{ title }}</header>
-    <article>
-      <q>
-        {{{ content }}}
-      </q>
-      </author>
-    </article>
+    <a href="#menu" class="nav-link">
+      <img src="public/images/navicon-png2x.png" width="20" alt="Menu toggle">
+    </a>
+
+    <nav>
+      <ul>
+        <li>Item 1</a>
+        <li>Item 2</a>
+        <li>Item 3</a>
+      </ul>
+    </nav>
+
+    <div class="content">
+    	<header>{{ title }}</header>
+      <article>
+        <q>
+          {{{ content }}}
+        </q>
+        </author>
+      </article>
+    </div>
+    <script data-main="public/js/boilerplate" src="public/js/lib/require.js"></script>
   </body>
 </html>
 
