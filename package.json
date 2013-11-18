@@ -13,7 +13,7 @@
      "web": "http://www.mikemaccana.com",
      "twitter": "mikemaccana"
   },
-  "license": "MIT",
+  "license": "Proprietary",
   "repository": {
      "type": "git",
      "url": "https://github.com/mikemaccana/boilerplatejs.git"
@@ -25,5 +25,12 @@
     "requirejs": ">=2.0.2",
     "hogan.js": "==2.0.0",
     "express": "==3.2.6"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "matchdep": "~0.1.2",
+    "grunt-contrib-watch": "~0.5.1",
+    "grunt-open": "~0.2.1",
+    "grunt-contrib-less": "~0.7.0"
   }
 }
