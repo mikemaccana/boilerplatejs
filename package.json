@@ -1,25 +1,25 @@
 {
   "name": "boilerplatejs",
-  "version": "2013.06.27",
+  "version": "2014.02.10",
   "main": "app",
   "description": "A full-stack Demo app.",
   "keywords": [
-     "boilerplate",
-     "full stack"
+    "boilerplate",
+    "full stack"
   ],
   "author": {
-     "name": "Mike MacCaa",
-     "email": "mike.maccana@gmail.com",
-     "web": "http://www.mikemaccana.com",
-     "twitter": "mikemaccana"
+    "name": "Mike MacCaa",
+    "email": "mike.maccana@gmail.com",
+    "web": "http://www.mikemaccana.com",
+    "twitter": "mikemaccana"
   },
   "license": "Proprietary",
   "repository": {
-     "type": "git",
-     "url": "https://github.com/mikemaccana/boilerplatejs.git"
+    "type": "git",
+    "url": "https://github.com/mikemaccana/boilerplatejs.git"
   },
   "engines": {
-     "node": "==0.10.10"
+    "node": "==0.10.10"
   },
   "dependencies": {
     "requirejs": ">=2.0.2",
@@ -27,11 +27,12 @@
     "express": "==3.2.6"
   },
   "devDependencies": {
-    "grunt": "~0.4.1",
-    "matchdep": "~0.1.2",
-    "grunt-contrib-watch": "~0.5.1",
-    "grunt-open": "~0.2.1",
-    "grunt-contrib-less": "~0.7.0",
-    "grunt-autoprefixer": "~0.4.1"
+    "gulp": "3.3.1",
+    "gulp-autoprefixer": "0.0.3",
+    "gulp-nodemon": "0.1.1",
+    "gulp-less": "1.1.6",
+    "gulp-livereload": "~0.2.0",
+    "gulp-jshint":"==1.3.4",
+    "tiny-lr": "0.0.5"
   }
 }
