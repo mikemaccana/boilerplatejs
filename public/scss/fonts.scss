@@ -1,0 +1,23 @@
+$fontsurl: "/public/fonts";
+
+@font-face {
+    font-family: 'ItaliannoRegular';
+    src: url('${fontsurl}/Italianno-Regular-OTF-webfont.eot');
+    src: url('${fontsurl}/Italianno-Regular-OTF-webfont.eot?#iefix') format('embedded-opentype'),
+         url('${fontsurl}/Italianno-Regular-OTF-webfont.woff') format('woff'),
+         url('${fontsurl}/Italianno-Regular-OTF-webfont.ttf') format('truetype'),
+         url('${fontsurl}/Italianno-Regular-OTF-webfont.svg#ItaliannoRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'TheanoDidotRegular';
+    src: url('${fontsurl}/TheanoDidot-Regular-webfont.eot');
+    src: url('${fontsurl}/TheanoDidot-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('${fontsurl}/TheanoDidot-Regular-webfont.woff') format('woff'),
+         url('${fontsurl}/TheanoDidot-Regular-webfont.ttf') format('truetype'),
+         url('${fontsurl}/TheanoDidot-Regular-webfont.svg#TheanoDidotRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}

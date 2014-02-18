@@ -1,0 +1,96 @@
+@import 'fonts';
+@import 'normalize';
+
+$prettyblue: #4DBF9F;
+$sidebar-width: 150px;
+$darkgrey: #222;
+
+$small-screen-threshold: 770px; // Single column layout
+$max-column-width: 550px; // Width at which text becomes too wide to read reasonably
+
+// http://csswizardry.com/2012/06/single-direction-margin-declarations/
+$spacing: 24px;
+
+* {
+  // Ensure padding is inside boxes. See http://paulirish.com/2012/box-sizing-border-box-ftw
+  box-sizing: border-box;
+}
+
+a, a:hover, a:active, a:visited {
+  color: $prettyblue;
+  text-decoration: none;
+}
+
+/* ☰ button */
+.nav-link {
+  display: none;
+  top: 0;
+  left: $sidebar-width;
+  background: rgba(0,0,0,0.7);
+  padding: 1em;
+  @media (max-width: $small-screen-threshold) {
+    position: fixed;
+    left: 0;
+    display: block;
+  }
+}
+
+nav {
+  margin-left: -$sidebar-width;
+  width: $sidebar-width;
+  position: fixed;
+  top: 0;
+  left: $sidebar-width;
+  bottom: 0;
+  z-index: 1;
+  height: 100%;
+  background: $darkgrey;
+  color: whitesmoke;
+  &.menu-active {
+    transform: translateX(0);
+    width: $sidebar-width;
+  }
+  @media (max-width: $small-screen-threshold) {
+    left: 0;
+  }
+  ul, li {
+    list-style: none;
+  }
+  ul {
+    padding-left: 10px;
+  }
+}
+
+body, nav, .nav-link {
+  transition: all 0.2s ease-out;
+}
+
+body {
+  min-height: 100vh;
+  padding-left: $sidebar-width;
+  left: 0;
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 100;
+  color: $darkgrey;
+  &.menu-active {
+    position: relative;
+    transform: translateX($sidebar-width);
+    .nav-link {
+      transform: translateX(0);
+    }
+  }
+  @media (max-width: $small-screen-threshold) {
+    padding-left: 0;
+  }
+}
+
+.content {
+  padding: $spacing;
+  max-width: $max-column-width;
+  * {
+    // Boxes have layout by default (so no clearfixes are ever needed). Enable scrolling explicitly if needed.
+    overflow: hidden;
+  }
+}
+
